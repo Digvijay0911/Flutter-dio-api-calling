@@ -47,6 +47,15 @@ class ApiMethods {
     print(response.statusCode);
     print(response.data.toString());
   }
-
-
+  // 5. Patch (Adding some data to the exisiting data)
+  static void patchData() async {
+    var dio = Dio();
+    var response =
+        await dio.patch("https://jsonplaceholder.typicode.com/posts/1", data: {
+      "name": "Vishal",
+      "title":"Hey Good Morning"
+    });
+    print(response.statusCode);
+    print(response.data.toString());
+  }
 }

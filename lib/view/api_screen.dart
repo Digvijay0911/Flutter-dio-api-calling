@@ -44,7 +44,14 @@ class ApiScreen extends StatelessWidget {
                 "Edit Data (PUT)",
                 style: TextStyle(fontSize: 20, color: Colors.black),
               )),
-          
+              ElevatedButton(
+              onPressed: () {
+                ApiMethods.patchData();
+              },
+              child: const Text(
+                "Edit Data (PATCH)",
+                style: TextStyle(fontSize: 20, color: Colors.black),
+              ))
         ],
       ),
     );
