@@ -35,4 +35,18 @@ class ApiMethods {
     print(response[1].statusCode);
     print(response[1].data.toString());
   }
+
+  // 4. PUT
+  static void updateData() async {
+    var dio = Dio();
+    var response =
+        await dio.put("https://jsonplaceholder.typicode.com/posts/1", data: {
+      "name": "Abrar",
+      "email": "abrar123@gmail.com",
+    });
+    print(response.statusCode);
+    print(response.data.toString());
+  }
+
+
 }

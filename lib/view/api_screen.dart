@@ -12,7 +12,7 @@ class ApiScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          TextButton(
+          ElevatedButton(
               onPressed: () {
                 ApiMethods.fetchData();
               },
@@ -20,7 +20,7 @@ class ApiScreen extends StatelessWidget {
                 "Fetch Data (GET)",
                 style: TextStyle(fontSize: 20, color: Colors.black),
               )),
-          TextButton(
+          ElevatedButton(
               onPressed: () {
                 ApiMethods.addData();
               },
@@ -28,14 +28,23 @@ class ApiScreen extends StatelessWidget {
                 "Add Data (POST)",
                 style: TextStyle(fontSize: 20, color: Colors.black),
               )),
-              TextButton(
+          ElevatedButton(
               onPressed: () {
                 ApiMethods.addAndFetchData();
               },
               child: const Text(
                 "Add & Fetch Data (GET POST)",
                 style: TextStyle(fontSize: 20, color: Colors.black),
-              ))
+              )),
+          ElevatedButton(
+              onPressed: () {
+                ApiMethods.updateData();
+              },
+              child: const Text(
+                "Edit Data (PUT)",
+                style: TextStyle(fontSize: 20, color: Colors.black),
+              )),
+          
         ],
       ),
     );
