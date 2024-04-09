@@ -6,11 +6,11 @@ class ApiMethods {
     var dio = Dio();
     var response =
         await dio.get("https://jsonplaceholder.typicode.com/todos/1");
-    print(response.statusCode); 
+    print(response.statusCode);
     print(response.data.toString());
   }
 
-  // Post
+  // 2. Post
   static void addData() async {
     var dio = Dio();
     var response =
@@ -20,5 +20,19 @@ class ApiMethods {
     });
     print(response.statusCode);
     print(response.data.toString());
+  }
+
+  // 3. Get + Post
+  static void addAndFetchData() async {
+    var dio = Dio();
+    var response = await Future.wait([
+      dio.get("https://jsonplaceholder.typicode.com/posts"),
+      dio.post("https://jsonplaceholder.typicode.com/posts"),
+    ]);
+    print(response[0].statusCode);
+    print(response[0].data.toString());
+
+    print(response[1].statusCode);
+    print(response[1].data.toString());
   }
 }

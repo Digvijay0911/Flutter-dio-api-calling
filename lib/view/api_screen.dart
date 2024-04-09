@@ -27,6 +27,14 @@ class ApiScreen extends StatelessWidget {
               child: const Text(
                 "Add Data (POST)",
                 style: TextStyle(fontSize: 20, color: Colors.black),
+              )),
+              TextButton(
+              onPressed: () {
+                ApiMethods.addAndFetchData();
+              },
+              child: const Text(
+                "Add & Fetch Data (GET POST)",
+                style: TextStyle(fontSize: 20, color: Colors.black),
               ))
         ],
       ),
