@@ -47,15 +47,26 @@ class ApiMethods {
     print(response.statusCode);
     print(response.data.toString());
   }
+
   // 5. Patch (Adding some data to the exisiting data)
   static void patchData() async {
     var dio = Dio();
-    var response =
-        await dio.patch("https://jsonplaceholder.typicode.com/posts/1", data: {
-      "name": "Vishal",
-      "title":"Hey Good Morning"
-    });
+    var response = await dio.patch(
+        "https://jsonplaceholder.typicode.com/posts/1",
+        data: {"name": "Vishal", "title": "Hey Good Morning"});
     print(response.statusCode);
     print(response.data.toString());
+  }
+
+  // 6. Delete
+  static void deleteData() async {
+    var dio = Dio();
+    var response =
+        await dio.get("https://jsonplaceholder.typicode.com/posts/2");
+    print(response.data.toString());
+
+    var res = await dio.delete("https://jsonplaceholder.typicode.com/posts/2");
+    print(res.statusCode);
+    print(res.data.toString());
   }
 }
