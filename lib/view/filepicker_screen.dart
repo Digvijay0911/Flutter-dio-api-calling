@@ -3,7 +3,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 // --------Global variables------------------
-File file = File("");
+File file = File(
+    '/Users/koptotech/Library/Developer/CoreSimulator/Devices/831B44E5-1CA4-4FAC-B939-3460C9B2C447/data/Containers/Data/Application/EBDA606E-AA85-43E9-B7AA-B4E97747E5BF/tmp/IMG_0005-1712699126618.jpeg');
 
 // ==========================================
 class FilePickerScreen extends StatefulWidget {
@@ -22,6 +23,7 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
     if (result != null) {
       setState(() {
         file = File(result.files.single.path ?? "");
+        print(file);
       });
     }
   }
@@ -44,7 +46,7 @@ class _FilePickerScreenState extends State<FilePickerScreen> {
               onPressed: () {
                 pickFile();
               },
-              child: Text("Pick File"))
+              child: const Text("Pick File"))
         ],
       ),
     );
